@@ -1,0 +1,75 @@
+.preloader {
+    height: 100vh;
+    width: 100%;
+    background-color: #181823;
+    color: #C0EEF2;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 55;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.texts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    height: 300px;
+    width: 600px;
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.preloader-e {
+    padding-left: 94px;
+}
+
+.preloader-a {
+    padding-left: 188px;
+}
+
+.preloader-c {
+    padding-left: 282px;
+}
+
+.preloader-t {
+    padding-left: 376px;
+}
+
+.texts-container .preloader-r::first-letter,
+.texts-container .preloader-e::first-letter,
+.texts-container .preloader-a::first-letter,
+.texts-container .preloader-c::first-letter,
+.texts-container .preloader-t::first-letter {
+  color: #0eb4dd;
+}
+
+@media only screen and (max-width: 670px) {
+    .texts-container {
+      font-size: 30px;
+      /* margin-left: 60px; */
+      margin-right: 60px;
+      align-items: center;
+    }
+
+    .preloader-e {
+        padding-left: 50px;
+    }
+    
+    .preloader-a {
+        padding-left: 100px;
+    }
+    
+    .preloader-c {
+        padding-left: 150px;
+    }
+    
+    .preloader-t {
+        padding-left: 200px;
+    }
+  }
