@@ -174,13 +174,22 @@ const ContactInfo = styled.div`
 const Info = styled.span`
   padding-bottom: .5rem;
   color: ${props => props.theme.text};
+  display: flex;
+
+
 `;
+
+const IconPlusValue = styled.h2`
+  font-size: 15px;
+  margin-left: 10px;
+`
 
 const ContactMessage = styled.p`
   color: ${props => props.theme.text};
   font-size: 1.5rem;
+  margin-top: 20px;
   
-  ${mediaQueries(45)`
+  ${mediaQueries(75)`
     font-size: 1rem;
 `}
 `
@@ -209,13 +218,16 @@ const ContactPage = () => {
               <ContactInfoWrapper>
                 <ContactInfo>
                   <Info>
-                    <FontAwesomeIcon icon={faMapMarkerAlt} /> La Paz, Tarlac
+                    <FontAwesomeIcon icon={faMapMarkerAlt} />
+                    <IconPlusValue> La Paz, Tarlac</IconPlusValue>
                   </Info>
                   <Info>
-                    <FontAwesomeIcon icon={faPhone} /> 09915807187
+                    <FontAwesomeIcon icon={faPhone} />
+                    <IconPlusValue> 09915807187</IconPlusValue>
                   </Info>
                   <Info>
-                    <FontAwesomeIcon icon={faEnvelope} /> nherwinostia2@gmail.com
+                    <FontAwesomeIcon icon={faEnvelope} />
+                    <IconPlusValue> nherwinostia2@gmail.com</IconPlusValue>
                   </Info>
                 </ContactInfo>
                 <ContactMessage>

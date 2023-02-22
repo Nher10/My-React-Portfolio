@@ -1,9 +1,9 @@
-import { useState, lazy, Suspense } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 import MainContainer from './StyledComponents/MainContainer'
-const PowerButton = lazy(() => import("./subComponents/PowerButton"));
-const SocialIcons = lazy(() => import("./subComponents/SocialIcons"));
-const LogoComponent = lazy(() => import("./SubComponents/LogoComponent"));
+import PowerButton from './SubComponents/PowerButton'
+import SocialIcons from './SubComponents/SocialIcons'
+import LogoComponent from './SubComponents/LogoComponent'
 import { NavLink } from 'react-router-dom'
 import { React } from './AllSvgs'
 import CenterReactLogo from './StyledComponents/CenterReactLogo'
@@ -11,7 +11,6 @@ import Intro from './Intro'
 import { motion } from 'framer-motion'
 import Contact from './StyledComponents/Contact'
 import { mediaQueries } from './Themes'
-import Loading from './SubComponents/Loading'
 
 const Container = styled.div`
   padding: 2rem
@@ -20,9 +19,9 @@ const Projects = styled(NavLink)`
   color:${props => props.click ? props.theme.body : props.theme.text};
   position: absolute;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1rem;
   top: 40%;
-  right: calc(1.5vh);
+  right: calc(.5rem + 2vh);
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
@@ -32,7 +31,7 @@ const Skills = styled(NavLink)`
   color:${props => props.click ? props.theme.body : props.theme.text};
   position: absolute;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1rem;
   top: 33%;
   left: calc(.5rem + 2vh);
   transform: rotate(-90deg) translate(-50%, -50%);
@@ -43,9 +42,9 @@ const RESUME = styled(NavLink)`
   color:${props => props.theme.text};
   position: absolute;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1rem;
   top: 70%;
-  right: calc(.3rem + 2vh);
+  right: calc(1rem + 2vh);
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
@@ -64,14 +63,14 @@ const About = styled(NavLink)`
   color:${props => props.click ? props.theme.body : props.theme.text};
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1rem;
   z-index: 10;
 `
 const Offer = styled(NavLink)`
   color:${props => props.theme.text};
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1rem;
   z-index: 1;
 `
 const LightDiv = styled.div`
@@ -121,7 +120,7 @@ const Main = () => {
   const mq = window.matchMedia("(max-width: 50em)").matches;
 
   return (
-    <Suspense fallback={<Loading />}>
+    <>
       <MainContainer
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -257,7 +256,7 @@ const Main = () => {
               {click ? <Intro click={click}/> : null}
           </Container>
       </MainContainer>
-    </Suspense>
+    </>
   )
 }
 

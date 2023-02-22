@@ -5,7 +5,7 @@ const Contact = styled(NavLink)`
     color:${props => props.click ? props.theme.body : props.theme.text};
     position: absolute;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1rem;
     top: 2rem;
     right: calc(1rem + 2vw);
     text-decoration: none;
